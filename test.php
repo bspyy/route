@@ -1,10 +1,10 @@
 <?php
 
-include './src/RouteCollector.php';
-include './src/RouteParser.php';
-include './src/DataGenerator.php';
+include './vendor/autoload.php';
 
-$route = new \SF\RouteCollector();
+//namespace
+
+$route = new \SF\Route\RouteCollector(new \SF\Route\RouteParser\Std(),new \SF\Route\DataGenerator\GroupCountBased());
 
 $route->addRoute('GET', '/', 'Homepage@Action');
 $route->addRoute('POST', '/', 'Homepage@Action');
@@ -22,3 +22,9 @@ $route->addRoute(['GET', 'POST'], '/test', 'test_handler');
 
 echo '<pre/>';
 print_r($route->getData());
+
+$dispatcher = new \SF\Route\Dispatcher\GroupCountBased($route->getData());
+
+$routeInfo = $dispatcher->dispatch('GET','/12');
+
+var_dump($routeInfo);
