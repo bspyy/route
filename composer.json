@@ -1,9 +1,10 @@
 {
 	"name": "bspyy/route",
-  	"description": "Fast request router for PHP",
+	"description": "Fast request router for PHP",
   	"keywords": ["routing", "router"],
+	"license": "MIT",
   	"authors": [
-    	{
+		{
       		"name": "bspyy",
       		"email": "knight9527@qq.com"
     	}
