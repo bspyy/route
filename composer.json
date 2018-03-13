@@ -1,0 +1,16 @@
+{
+	"name": "bspyy/route",
+  	"description": "Fast request router for PHP",
+  	"keywords": ["routing", "router"],
+  	"authors": [
+    	{
+      		"name": "bspyy",
+      		"email": "knight9527@qq.com"
+    	}
+  	],
+    "autoload": {
+        "psr-4": {
+            "SF\\Route\\": "src/"
+        }
+    }
+}
